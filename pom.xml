@@ -6,7 +6,7 @@
 
 	<groupId>92dc7113-3927-47b4-9abf-6d3e0b42f1e4</groupId>
 	<artifactId>cicd-pipelines-project</artifactId>
-	<version>1.0.6</version>
+	<version>1.0.7</version>
 	<packaging>mule-application</packaging>
 
 	<name>cicd-pipelines-project</name>
