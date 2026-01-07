@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:salesforce="http://www.mulesoft.org/schema/mule/salesforce"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/salesforce http://www.mulesoft.org/schema/mule/salesforce/current/mule-salesforce.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<flow name="cicd-pipelines-projectFlow" doc:id="fd2d758b-3059-4a02-b63b-f0152a90e6c6" >
+		<http:listener doc:name="Listener" doc:id="8476c148-d4f7-4c4d-a472-3630579856f2" config-ref="HTTP_Listener_config" path="/cicd"/>
+		<!-- [STUDIO:"Query"]<salesforce:query doc:name="Query" doc:id="cd6b1fd6-2aa2-48f8-ae03-1f2a53a382bf" config-ref="Salesforce_Config">
+			<salesforce:salesforce-query ><![CDATA[SELECT Id,student_age__c,student_Email__c,student_id__c,student_mobile_number__c,student_name__c FROM student_records__c&#93;&#93;></salesforce:salesforce-query>
+		</salesforce:query> [STUDIO] -->
+		<ee:transform doc:name="Transform Message" doc:id="e7243ad5-4a32-490f-b4fe-4b8812e07af7" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+</mule>
