@@ -4,9 +4,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.mycompany</groupId>
+	<groupId>92dc7113-3927-47b4-9abf-6d3e0b42f1e4</groupId>
 	<artifactId>cicd-pipelines-project</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.3</version>
 	<packaging>mule-application</packaging>
 
 	<name>cicd-pipelines-project</name>
