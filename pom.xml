@@ -6,7 +6,7 @@
 
 	<groupId>92dc7113-3927-47b4-9abf-6d3e0b42f1e4</groupId>
 	<artifactId>cicd-pipelines-project</artifactId>
-	<version>1.0.8</version>
+	<version>1.0.10</version>
 	<packaging>mule-application</packaging>
 
 	<name>cicd-pipelines-project</name>
@@ -37,12 +37,12 @@
 						<provider>MC</provider>
 						<muleVersion>4.9.11</muleVersion>
 						<server>anypoint-exchange-v3</server>
-						<username>${anypoint.username}</username>
-						<password>${anypoint.password}</password>
-						<businessGroupId>${anypoint.businessGroup}</businessGroupId>
-						<environment>${env}</environment>
+						<username>susmitha11122025</username>
+						<password>Pvns@2003</password>
+						<businessGroupId>92dc7113-3927-47b4-9abf-6d3e0b42f1e4</businessGroupId>
+						<environment>Sandbox</environment>
 						<target>Cloudhub-US-East-2</target>
-						<applicationName>${appname}</applicationName>
+						<applicationName>cicd-pipelines-project</applicationName>
 						<replicas>1</replicas>
 						<vCores>0.1</vCores>
 						<deploymentSettings>
@@ -62,7 +62,7 @@
 		<repository>
 			<id>anypoint-exchange-v3</id>
 			<name>Anypoint Exchange</name>
-			<url>https://maven.anypoint.mulesoft.com/api/v3/organizations/${anypoint.businessGroup}/maven</url>
+			<url>https://maven.anypoint.mulesoft.com/api/v3/organizations/92dc7113-3927-47b4-9abf-6d3e0b42f1e4/maven</url>
 			<layout>default</layout>
 		</repository>
 	</distributionManagement>
