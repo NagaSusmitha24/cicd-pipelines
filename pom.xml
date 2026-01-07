@@ -6,7 +6,7 @@
 
 	<groupId>92dc7113-3927-47b4-9abf-6d3e0b42f1e4</groupId>
 	<artifactId>cicd-pipelines-project</artifactId>
-	<version>1.0.5</version>
+	<version>1.0.6</version>
 	<packaging>mule-application</packaging>
 
 	<name>cicd-pipelines-project</name>
@@ -42,7 +42,7 @@
 						<businessGroupId>${anypoint.businessGroup}</businessGroupId>
 						<environment>${env}</environment>
 						<target>Cloudhub-US-East-2</target>
-						<applicationName>cicd-pipelines-project</applicationName>
+						<applicationName>${appname}</applicationName>
 						<replicas>1</replicas>
 						<vCores>0.1</vCores>
 						<deploymentSettings>
