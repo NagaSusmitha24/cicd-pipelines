@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>92dc7113-3927-47b4-9abf-6d3e0b42f1e4</groupId>
+	<groupId>${orgid}</groupId>
 	<artifactId>cicd-pipelines-project</artifactId>
 	<version>1.0.1</version>
 	<packaging>mule-application</packaging>
@@ -37,11 +37,11 @@
 						<provider>MC</provider>
 						<muleVersion>4.9.11</muleVersion>
 						<server>anypoint-exchange-v3</server>
-						<username>susmitha11122025</username>
-						<password>Pvns@2003</password>
-						<businessGroupId>92dc7113-3927-47b4-9abf-6d3e0b42f1e4</businessGroupId>
-						<environment>dev</environment>
-						<target>Cloudhub-US-East-2</target>
+						<username>${username}</username>
+						<password>${password}</password>
+						<businessGroupId>${orgid}</businessGroupId>
+						<environment>${env}</environment>
+						<target>${targetname}</target>
 						<applicationName>cicd-pipelines-project</applicationName>
 						<replicas>1</replicas>
 						<vCores>0.1</vCores>
@@ -62,7 +62,7 @@
 		<repository>
 			<id>anypoint-exchange-v3</id>
 			<name>Anypoint Exchange</name>
-			<url>https://maven.anypoint.mulesoft.com/api/v3/organizations/92dc7113-3927-47b4-9abf-6d3e0b42f1e4/maven</url>
+			<url>https://maven.anypoint.mulesoft.com/api/v3/organizations/${orgid}/maven</url>
 			<layout>default</layout>
 		</repository>
 	</distributionManagement>
