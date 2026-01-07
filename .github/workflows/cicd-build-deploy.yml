@@ -38,6 +38,6 @@ jobs:
             -Dusername=${{ secrets.ANYPOINT_USERNAME }} \
             -Dpassword=${{ secrets.ANYPOINT_PASSWORD }} \
             -Dorgid=${{ secrets.ANYPOINT_ORG_ID }} \
-            -Denv=${{ secrets.ANYPOINT_ENV }} \
-            -Dtargetname=${{ secrets.ANYPOINT_TARGET }}
+            -Denv=${{ secrets.ANYPOINT_ENV }} 
+         
 
