@@ -3,8 +3,7 @@ name: Mule CI/CD - CloudHub 2.0 (Maven)
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+ 
 
 jobs:
   build-deploy:
