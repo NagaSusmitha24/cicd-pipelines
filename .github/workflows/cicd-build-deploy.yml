@@ -1,42 +1,59 @@
-name: Mule CI/CD - CloudHub 2.0 (Maven)
-
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
  
-
 jobs:
-  build-deploy:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Source
+      - name: Checkout this repo
         uses: actions/checkout@v4
-
-      - name: Cache Maven Dependencies
-        uses: actions/cache@v3
+ 
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-maven-
+ 
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: "zulu"
+          java-version: 17
+ 
+      # - name: Build JAR
+      #   run: mvn clean package -DmuleDeploy
+ 
+      - name: Publish to Exchange
+        run: |
+          mvn deploy --settings .maven/settings.xml -DskipMunitTests \
+          -Danypoint.username="${{ secrets.USER }}" \
+          -Danypoint.password="${{ secrets.PASS }}"
+ 
+ 
+  deploydev:
+    needs: build  
+    runs-on: ubuntu-latest
+    environment: dev
+    steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v4
+      - name: Cache dependencies
+        uses: actions/cache@v4
         with:
           path: ~/.m2/repository
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
-            ${{ runner.os }}-maven
-
-      - name: Set up JDK 17
-        uses: actions/setup-java@v4
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-          cache: maven
-
-      - name: Build Mule Application
-        run: mvn -B clean package
-
-      - name: Deploy to CloudHub 2.0
+            ${{ runner.os }}-maven-
+      - name: Deploy to dev
         run: |
-          mvn deploy -DmuleDeploy \
-            -Dusername=${{ secrets.ANYPOINT_USERNAME }} \
-            -Dpassword=${{ secrets.ANYPOINT_PASSWORD }} \
-            -Dorgid=${{ secrets.ANYPOINT_ORG_ID }} \
-            -Denv=${{ secrets.ANYPOINT_ENV }} 
-         
-
+          mvn deploy --settings .maven/settings.xml -DskipMunitTests -DmuleDeploy \
+          -Danypoint.username="${{ secrets.USER }}" \
+          -Danypoint.password="${{ secrets.PASS }}" \
+          -Danypoint.businessGroup="${{ secrets.ANYPOINT_ORG_ID }}" \
+          -Denv="${{ secrets.ENV }}" \
+          -Dappname="${{ secrets.APP_NAME }}" 
+          
+ 
