@@ -6,7 +6,7 @@
 
 	<groupId>${orgid}</groupId>
 	<artifactId>cicd-pipelines-project</artifactId>
-	<version>1.0.4</version>
+	<version>1.0.5</version>
 	<packaging>mule-application</packaging>
 
 	<name>cicd-pipelines-project</name>
