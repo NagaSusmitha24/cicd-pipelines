@@ -29,8 +29,8 @@ jobs:
       - name: Publish to Exchange
         run: |
           mvn deploy --settings .settings/settings.xml -DskipMunitTests \
-          -Danypoint.username="${{ secrets.USER }}" \
-          -Danypoint.password="${{ secrets.PASS }}"
+          -Danypoint.username="susmitha11122025" \
+          -Danypoint.password="Pvns@2003"
  
  
   deploydev:
@@ -50,10 +50,10 @@ jobs:
       - name: Deploy to dev
         run: |
           mvn deploy --settings .settings/settings.xml -DskipMunitTests -DmuleDeploy \
-          -Danypoint.username="${{ secrets.USER }}" \
-          -Danypoint.password="${{ secrets.PASS }}" \
-          -Danypoint.businessGroup="${{ secrets.ANYPOINT_ORG_ID }}" \
-          -Denv="${{ secrets.ENV }}" \
-          -Dappname="${{ secrets.APP_NAME }}" 
+          -Danypoint.username="susmitha11122025" \
+          -Danypoint.password="Pvns@2003" \
+          -Danypoint.businessGroup="92dc7113-3927-47b4-9abf-6d3e0b42f1e4" \
+          -Denv="Sandbox" \
+          -Dappname="cicd-pipelines-project" 
           
  
