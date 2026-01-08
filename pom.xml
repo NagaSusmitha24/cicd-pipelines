@@ -42,7 +42,7 @@
 <businessGroupId>${businessGroup}</businessGroupId>
 <environment>${env}</environment>
 <target>Cloudhub-US-East-2</target>
-<applicationName>cicd20maven</applicationName>
+<applicationName>cicd-pipelines-project</applicationName>
 <replicas>1</replicas>
 <vCores>0.1</vCores>
 <deploymentSettings>
