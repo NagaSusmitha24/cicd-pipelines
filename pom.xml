@@ -5,11 +5,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>92dc7113-3927-47b4-9abf-6d3e0b42f1e4</groupId>
-	<artifactId>cicd-pipelines-project-v1</artifactId>
-	<version>1.0.1</version>
+	<artifactId>cicd-pipelines-project-v3</artifactId>
+	<version>1.0.2</version>
 	<packaging>mule-application</packaging>
 
-	<name>cicd-pipelines-project-v1</name>
+	<name>cicd-pipelines-project-v3</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -32,28 +32,26 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 						<configuration>
-					<cloudhub2Deployment>
-						<uri>https://anypoint.mulesoft.com</uri>
-						<provider>MC</provider>
-						<muleVersion>4.9.11</muleVersion>
-						<server>anypoint-exchange-v3</server>
-						<username>${username}</username>
-						<password>${password}</password>
-						<businessGroupId>${businessGroup}</businessGroupId>
-						<environment>${env}</environment>
-						<target>Cloudhub-US-East-2</target>
-						<applicationName>cicd-pipelines-project</applicationName>
-						<replicas>1</replicas>
-						<vCores>0.1</vCores>
-						<deploymentSettings>
-							
-							<lastMileSecurity>false</lastMileSecurity>
-							<forwardSslSession>false</forwardSslSession>
-							<generateDefaultPublicUrl>true</generateDefaultPublicUrl>
-						</deploymentSettings>
-						
-					</cloudhub2Deployment>
-				</configuration>
+<cloudhub2Deployment>
+<uri>https://anypoint.mulesoft.com</uri>
+<provider>MC</provider>
+<muleVersion>4.9.11</muleVersion>
+<server>anypoint-exchange-v3</server>
+<username>${user}</username>
+<password>${pw}</password>
+<businessGroupId>${businessGroup}</businessGroupId>
+<environment>${env}</environment>
+<target>Cloudhub-US-East-2</target>
+<applicationName>cicd20maven</applicationName>
+<replicas>1</replicas>
+<vCores>0.1</vCores>
+<deploymentSettings>
+<lastMileSecurity>false</lastMileSecurity>
+<forwardSslSession>false</forwardSslSession>
+<generateDefaultPublicUrl>true</generateDefaultPublicUrl>
+</deploymentSettings>
+</cloudhub2Deployment>
+</configuration>
 				
 			</plugin>
 		</plugins>
