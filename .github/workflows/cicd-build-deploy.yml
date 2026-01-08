@@ -53,6 +53,6 @@ jobs:
           -Danypoint.username="${{ secrets.USER }}" \
           -Danypoint.password="${{ secrets.PASS }}" \
           -Danypoint.businessGroup="${{ secrets.ANYPOINT_ORG_ID }}" \
-          -Denv="${{ secrets.ENV }}" \
-          -Dappname="${{ secrets.APP_NAME }}" 
+          -Denv="Sandbox" \
+          -Dappname="cicd-pipelines-project" 
           
