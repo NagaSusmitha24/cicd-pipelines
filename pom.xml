@@ -5,11 +5,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>92dc7113-3927-47b4-9abf-6d3e0b42f1e4</groupId>
-	<artifactId>cicd-pipelines-project-t</artifactId>
-	<version>1.0.0</version>
+	<artifactId>cicd-pipelines-project-pipe</artifactId>
+	<version>1.0.1</version>
 	<packaging>mule-application</packaging>
 
-	<name>cicd-pipelines-project-t</name>
+	<name>cicd-pipelines-project-pipe</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
